@@ -44,15 +44,13 @@ public class PurchasePage extends JFrame implements ActionListener {
         labelTitle = new JLabel("Halaman Pembelian");
         labelCategory = new JLabel("Kategori: " + this.dvdCategory);
         labelPrice = new JLabel("Harga: Rp " + String.format("%.3f", this.dvdPrice) + " /pcs");
-        
-        // Konfigurasi frame
+
         setTitle("Purchase Page");
         setSize(400, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
-        
-        // Tambahkan komponen ke frame
+
         add(labelTitle);
         add(labelCategory);
         add(labelPrice);
@@ -71,8 +69,7 @@ public class PurchasePage extends JFrame implements ActionListener {
         add(valueAmount);
         add(valuePPN);
         add(valueTotalPrice);
-        
-        // Atur posisi komponen
+
         labelTitle.setBounds(20, 20, 200, 25);
         labelCategory.setBounds(20, 50, 200, 25);
         labelPrice.setBounds(20, 80, 200, 25);
@@ -91,8 +88,7 @@ public class PurchasePage extends JFrame implements ActionListener {
         valueTotalPrice.setBounds(150, 320, 200, 25);
         
         buttonBack.setBounds(20, 360, 350, 35);
-        
-        // Tambahkan event handler
+
         buttonBack.addActionListener(this);
         buttonPurchase.addActionListener(this);
         
