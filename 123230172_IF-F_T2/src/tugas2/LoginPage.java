@@ -61,7 +61,7 @@ public class LoginPage extends JFrame implements ActionListener {
                 String password = new String(fieldPassword.getPassword());
                 
                 // Validasi login
-                if (username.equals("admin") && password.equals("admin")) {
+                if (username.equals("123230172") && password.equals("271032321")) {
                     JOptionPane.showMessageDialog(this, "Login Berhasil");
                     new HomePage(username);
                     dispose();
