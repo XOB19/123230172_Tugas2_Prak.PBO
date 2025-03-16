@@ -55,21 +55,25 @@ public class LoginPage extends JFrame implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == buttonLogin) {
-            String username = fieldUsername.getText();
-            String password = new String(fieldPassword.getPassword());
-            
-            // Validasi login
-            if (username.equals("123230172") && password.equals("271032321")) {
-                JOptionPane.showMessageDialog(this, "Login Berhasil");
-                new HomePage(username);
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(this, "Username atau Password salah", "Error", JOptionPane.ERROR_MESSAGE);
+        try {
+            if (e.getSource() == buttonLogin) {
+                String username = fieldUsername.getText();
+                String password = new String(fieldPassword.getPassword());
+                
+                // Validasi login
+                if (username.equals("admin") && password.equals("admin")) {
+                    JOptionPane.showMessageDialog(this, "Login Berhasil");
+                    new HomePage(username);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Username atau Password salah", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else if (e.getSource() == buttonReset) {
+                fieldUsername.setText("");
+                fieldPassword.setText("");
             }
-        } else if (e.getSource() == buttonReset) {
-            fieldUsername.setText("");
-            fieldPassword.setText("");
+        } catch (Exception error) {
+            JOptionPane.showMessageDialog(this, "Terjadi kesalahan", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
